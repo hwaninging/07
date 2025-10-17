@@ -1,22 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
-//3. 매개변수  
-int inc(int counter);
+//4. 전역 변수 (아무데나 쓸 수 있음 - 이 파일의 전체 범위이다.) 
+int counter; //초기화 하는 애 기본적으로 0 -> int counter = 10; 하면 10부터 시작 
 
+void set_counter()
+{
+     counter = 20;
+}
 int main(void)
 {
-    int i = 10;
-    
-    printf("함수 호출 전 i=%d\n", i); //i값 출력 
-    i = inc(i); //반환값을 넣어줘야함. 
-    printf("함수 호출 후 i=%d\n", i); // 함수 호출 후 i값 출력 
+    printf("counter=%d\n", counter);
+    set_counter();
+    printf("counter=%d\n", counter);
     
     system("PAUSE");	
     return 0;
 } 
 
-int inc(int counter) //매개면수로 카운더 변수 받음 
-{
-    counter++; //+1 해줌 
-    return counter; //반환 
-} //지역 변수 : 이 함수가 없어짐과 동시에 같이 사라짐. 따라서 기존 10이 그대로 나옴. 
