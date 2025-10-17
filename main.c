@@ -1,22 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
-//4. 전역 변수 (아무데나 쓸 수 있음 - 이 파일의 전체 범위이다.) 
+//4. 전역 변수
+// # 50개 나오게 해보자  
 void f(void);
 
-int i;
 int main(void)
 {
+    int i; 
     for (i=0;i<5;i++)
     {
         f();
     }
     system("PAUSE");	
     return 0;
-}
+} //여기 안에서만 int i; 작용  
 
 void f(void)
 {
-     for (i=0;i<10;i++) //#이 10개 찍힘. 
+     int i; //그래서 int i 하나 더 필요 
+     for (i=0;i<10;i++)
      printf("#");
 } 
 
