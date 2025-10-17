@@ -1,19 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-//1. 변수 범위 (컴파일 여부 확인) 
-int main(int argc, char *argv[])
+//2. 지역 변수 생존기간 (tmep = 1이 반복 됨) 
+int main(void)
 {
-  int flag=1;
-  int y; //변수 선언 
-  
-  while (flag != 0)
-  {
-        int y;
-        y = 3;
-        flag = 0;
-  }
-  y = 4; //y가 선언이 안 된 상태였다  
-
+    int i;
+    
+    for (i=0;i<5;i++)
+    {
+        int temp = 1;
+        printf("temp = %d\n", temp);
+        temp++; 
+        }
 
   system("PAUSE");	
   return 0;
