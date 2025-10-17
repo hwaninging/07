@@ -1,19 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-//2. 지역 변수 생존기간 (tmep = 1이 반복 됨) 
-// +1 더해진 채로 나오게 하려면? 
+//3. 매개변수  
+int inc(int counter);
+
 int main(void)
 {
-    int i;
-    int temp = 1;
+    int i = 10;
+    printf("함수 호출 전 i=%d\n", i); //i값 출력 
+    inc(i); //함수 실행 
+    printf("함수 호출 후 i=%d\n", i); // 함수 호출 후 i값 출력 
     
-    for (i=0;i<5;i++)
-    {
-        printf("temp = %d\n", temp);
-        temp++; //+1 증가되는 것이 아님. 
-        }
+    system("PAUSE");	
+    return 0;
+} 
 
-  system("PAUSE");	
-  return 0;
-}
-//새로 만들었다가 없어졌다가 반복해서 +1이 누적되지 않음.  
+int inc(int counter) //매개면수로 카운더 변수 받음 
+{
+    counter++; //+1 해줌 
+    return counter; //반환 
+} //지역 변수 : 이 함수가 없어짐과 동시에 같이 사라짐. 따라서 기존 10이 그대로 나옴. 
