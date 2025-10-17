@@ -6,8 +6,9 @@ int inc(int counter);
 int main(void)
 {
     int i = 10;
+    
     printf("함수 호출 전 i=%d\n", i); //i값 출력 
-    inc(i); //함수 실행 
+    i = inc(i); //반환값을 넣어줘야함. 
     printf("함수 호출 후 i=%d\n", i); // 함수 호출 후 i값 출력 
     
     system("PAUSE");	
